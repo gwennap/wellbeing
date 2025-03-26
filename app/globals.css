@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-end-rgb));
+}
+
+@layer base {
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  .heading-1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+  
+  .heading-2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+  }
+  
+  .heading-3 {
+    @apply text-xl md:text-2xl font-bold;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-md transition duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-3 px-8 rounded-md transition duration-300;
+  }
+  
+  .btn-tertiary {
+    @apply bg-transparent text-primary-600 hover:text-primary-700 font-semibold py-3 px-8 transition duration-300;
+  }
+}
